@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Department of CST</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <h1>Department of CST</h1>
+    </header>
+
+    <main>
+        <!-- Timetable Section -->
+        <section id="timetable">
+            <h2>Time Table</h2>
+            <div class="timetable-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Day</th>
+                            <th>09:30 AM - 10:30 AM</th>
+                            <th>10:30 AM - 11:20 AM</th>
+                            <th>11:20 AM - 12:10 PM</th>
+                            <th>12:10 PM - 01:00 PM</th>
+                            <th>01:00 PM - 02:00 PM</th>
+                            <th>02:00 PM - 02:50 PM</th>
+                            <th>02:50 PM - 03:40 PM</th>
+                            <th>03:40 PM - 04:30 PM</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Monday</td>
+                            <td colspan="2">PCS-II (Aptitude)</td>
+                            <td>DBMS</td>
+                            <td>SE</td>
+                            <td rowspan="6">Lunch Break</td>
+                            <td>UHV</td>
+                            <td>DBMS</td>
+                            <td>P&S</td>
+                        </tr>
+                        <tr>
+                            <td>Tuesday</td>
+                            <td>SE</td>
+                            <td>P&S</td>
+                            <td>UHV</td>
+                            <td>OS</td>
+                            <td colspan="3">DBMS Lab</td>
+                        </tr>
+                        <tr>
+                            <td>Wednesday</td>
+                            <td>OS</td>
+                            <td colspan="3">OS Lab</td>
+                            <td>DBMS</td>
+                            <td>P&S</td>
+                            <td>UHV</td>
+                        </tr>
+                        <tr>
+                            <td>Thursday</td>
+                            <td>DBMS</td>
+                            <td>OS</td>
+                            <td>SE</td>
+                            <td>ES</td>
+                            <td>OS</td>
+                            <td colspan="2">PCS-II (English)</td>
+                        </tr>
+                        <tr>
+                            <td>Friday</td>
+                            <td>DBMS</td>
+                            <td>ES</td>
+                            <td>SE</td>
+                            <td>OS</td>
+                            <td>P&S</td>
+                            <td>SE</td>
+                            <td>Library</td>
+                        </tr>
+                        <tr>
+                            <td>Saturday</td>
+                            <td>UHV</td>
+                            <td colspan="3">FSD-I Lab</td>
+                            <td>FSD-I</td>
+                            <td>P&S</td>
+                            <td>Sports</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Subject Cards Section -->
+        <section id="subjects">
+            <h2>Subjects</h2>
+            <div class="subject-cards">
+                <div class="subject-card">
+                    <h3>Universal Human Values (UHV)</h3>
+                    <button onclick="redirect('uhv-syllabus')">Syllabus</button>
+                    <button onclick="redirect('uhv-resources')">Resources</button>
+                </div>
+                <div class="subject-card">
+                    <h3>Probability and Statistics (P&S)</h3>
+                    <button onclick="redirect('ps-syllabus')">Syllabus</button>
+                    <button onclick="redirect('ps-resources')">Resources</button>
+                </div>
+                <div class="subject-card">
+                    <h3>Operating Systems (OS)</h3>
+                    <button onclick="redirect('os-syllabus')">Syllabus</button>
+                    <button onclick="redirect('os-resources')">Resources</button>
+                </div>
+                <div class="subject-card">
+                    <h3>Database Management Systems (DBMS)</h3>
+                    <button onclick="redirect('dbms-syllabus')">Syllabus</button>
+                    <button onclick="redirect('dbms-resources')">Resources</button>
+                </div>
+                <div class="subject-card">
+                    <h3>Software Engineering (SE)</h3>
+                    <button onclick="redirect('se-syllabus')">Syllabus</button>
+                    <button onclick="redirect('se-resources')">Resources</button>
+                </div>
+                <div class="subject-card">
+                    <h3>Environmental Science (ES)</h3>
+                    <button onclick="redirect('es-syllabus')">Syllabus</button>
+                    <button onclick="redirect('es-resources')">Resources</button>
+                </div>
+                <div class="subject-card">
+                    <h3>Full Stack Development - I (FSD-I)</h3>
+                    <button onclick="redirect('fsd-syllabus')">Syllabus</button>
+                    <button onclick="redirect('fsd-resources')">Resources</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>All rights reserved by CSTians.</p>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PS Resources</title>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        .notes-list {
+            display: flex;
+            justify-content: center;  
+            flex-wrap: wrap;  
+            gap: 30px;  
+            padding: 20px;
+        }
+
+        .note-item img {
+            width: 269px;
+            height: 269px;
+            border-radius: 15px;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .note-item img:hover {
+            transform: scale(1.08);
+            box-shadow: 7px 7px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .youtube-list {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            padding: 20px;
+        }
+
+        .video-item {
+            cursor: pointer;
+            text-align: center;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .video-item img {
+            width: 269px;
+            height: 269px;
+            border-radius: 15px;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .video-item:hover img {
+            transform: scale(1.08);
+            box-shadow: 7px 7px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .video-item p {
+            margin-top: 10px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: white;
+            text-align: center;
+        }
+        .back-link {
+            display: block;
+            margin-top: 1rem;
+            color: #0f0;
+            text-align: center;
+            font-weight: 400;
+            text-decoration: none;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>PROBABILTY & STATISTICS</h1>
+    </header>
+
+    <main>
+        <!-- Notes Section -->
+        <section id="notes">
+            <h2>Notes</h2>
+            <div class="notes-list">
+                <a href="../resources/PSU1.pdf" target="_blank" class="note-item">
+                    <img src="PSU1.png" alt="OS Notes">
+                </a>
+            </div>
+            <div class="notes-list">
+                <a href="../resources/PSU2.pdf" target="_blank" class="note-item">
+                    <img src="PSU2.png" alt="OS Notes">
+                </a>
+            </div>
+            <p>ASSIGNMENT 1 UPLOADING SOON...</p>
+        </section>
+
+        <!-- YouTube Content Section 
+        <section id="youtube-content">
+            <h2>YouTube Content</h2>
+            <div class="youtube-list">
+                <div class="video-item" onclick="openYouTube('https://www.youtube.com/playlist?list=PLXj4XH7LcRfDrdQuJTHIPmKMpa7eYVaPm')">
+                    <img src="osplay.png" alt="OS Concepts">
+                    <p>OS Complete Playlist</p>
+                </div>
+                <div class="video-item" onclick="openYouTube('https://www.youtube.com/playlist?list=PLCSAymgDW_tYcauQPCge3b2SAnPz_zm7B')">
+                    <img src="osplayreg.png" alt="OS Concepts (Regional)">
+                    <p>(Regional Language) OS Complete Playlist</p>
+                </div>
+                <div class="video-item" onclick="openYouTube('https://youtu.be/ty31jQe2ZLA?si=asldabtLt8TYVKnS')">
+                    <img src="osreg.png" alt="OS in 4 Hours">
+                    <p>(Regional Language) OS IN 4 HOURS</p>
+                </div>
+            </div>
+        </section>
+        -->
+        <a href="../index.html" class="back-link">Back to Home</a>  
+    </main>
+
+    <footer>
+        <p>All rights reserved by CSTians.</p>
+    </footer>
+
+    <script>
+        function openYouTube(url) {
+            window.open(url, '_blank');
+        }
+    </script>
+</body>
+</html>

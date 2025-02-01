@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DBMS Resources</title>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        .notes-list {
+    display: flex;  
+    justify-content: center;  /* Center align images */
+    flex-wrap: wrap;  /* Allow wrapping for responsiveness */
+    gap: 30px;  /* 🔹 Option 1: Controls space between images */
+    padding: 20px; /* Optional padding */
+    }
+
+    /* Option 2: Using margin */
+    .note-item {
+        margin: 15px;  /* 🔹 Adds spacing around each note item */
+    }
+
+    /* Image Styling */
+    .note-item img {
+        width: 269px;  /* Keep size consistent */
+        height: 269px;
+        border-radius: 15px;  /* 🔹 Option 3: Rounded corners */
+        box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);  /* 🔹 Option 4: Shadow effect */
+        transition: transform 0.3s ease-in-out;
+    }
+
+    /* Hover Effect */
+    .note-item img:hover {
+        transform: scale(1.08);  /* 🔹 Option 5: Zoom effect on hover */
+        box-shadow: 7px 7px 20px rgba(0, 0, 0, 0.4); /* Enhanced shadow on hover */
+    }
+    .youtube-list {
+    display: flex;
+    justify-content: center;  /* Center align items */
+    flex-wrap: wrap;  /* Ensures responsiveness */
+    gap: 30px;  /* 🔹 Space between video thumbnails */
+    padding: 20px; /* Optional padding */
+    }
+
+    /* Video Item Styling */
+    .video-item {
+        cursor: pointer;
+        text-align: center;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    /* Thumbnail Styling */
+    .video-item img {
+        width: 269px;
+        height: 269px;
+        border-radius: 15px;  /* Rounded corners */
+        box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);  /* Shadow effect */
+        transition: transform 0.3s ease-in-out;
+    }
+
+    /* Hover Effect */
+    .video-item:hover img {
+        transform: scale(1.08);  /* Zoom effect on hover */
+        box-shadow: 7px 7px 20px rgba(0, 0, 0, 0.4); /* Enhanced shadow */
+    }
+
+    /* Title Text Styling */
+    .video-item p {
+        margin-top: 10px;
+        font-size: 1.1rem;
+        font-weight: bold;
+        color: white;  /* Adjust based on your theme */
+        text-align: center;
+    }
+    .back-link {
+            display: block;
+            margin-top: 1rem;
+            color: #0f0;
+            text-align: center;
+            font-weight: 400;
+            text-decoration: none;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>DBMS Resources</h1>
+    </header>
+
+    <main>
+        <!-- Notes Section -->
+        <section id="notes">
+            <h2>Notes</h2>
+            <div class="notes-list">
+                <a href="../resources/DBMSnotes.pdf" target="_blank" class="note-item">
+                    <img src="dbmsnotes.png" alt="DBMS Notes">
+                </a>
+                <a href="../resources/sqlnotes.pdf" target="_blank" class="note-item">
+                    <img src="sql.png" alt="SQL Notes">
+                </a>
+            </div>
+        </section>
+        
+
+        <!-- YouTube Content Section -->
+        <section id="youtube-content">
+            <h2>YouTube Content</h2>
+            <div class="youtube-list">
+                <div class="video-item" onclick="openYouTube('https://www.youtube.com/playlist?list=PLXj4XH7LcRfBF0sREiXwZPmbyCnLSM18K')">
+                    <img src="dbmssudh.png" alt="DBMS">
+                    <p>DBMS COMPLETE PLAYLIST</p>
+                </div>
+                <div class="video-item" onclick="openYouTube('https://youtu.be/DbQLWpaWLKw?si=i_eEemAdZYpSJ0A0')">
+                    <img src="dbms3hrs.png" alt="DBMS in 3 Hours (Regional Language)">
+                    <p>DBMS in 3 Hours (Regional Language)</p>
+                </div>
+            </div>
+        </section>     
+        <a href="../index.html" class="back-link">Back to Home</a>   
+    </main>
+
+    <footer>
+        <p>All rights reserved by CSTians.</p>
+    </footer>
+
+    <script>
+        function openYouTube(url) {
+            window.open(url, '_blank');
+        }
+    </script>
+</body>
+</html>
