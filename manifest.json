@@ -3,6 +3,7 @@
     "short_name": "cstvasavi",
     "description": "website as a PWA",
     "start_url": "/",
+    "id": "/",
     "display": "standalone",
     "background_color": "#ffffff",
     "theme_color": "#000000",
