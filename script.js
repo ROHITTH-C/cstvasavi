@@ -27,3 +27,37 @@ function redirect(resource) {
         alert("Resource not found!");
     }
 }
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/sw.js').then((registration) => {
+      console.log('Service Worker registered', registration);
+    }).catch((error) => {
+      console.log('Service Worker registration failed', error);
+    });
+  }
+
+  let deferredPrompt;
+
+window.addEventListener('beforeinstallprompt', (e) => {
+  // Prevent the default prompt
+  e.preventDefault();
+  deferredPrompt = e;
+
+  // Show your custom install button
+  const installButton = document.getElementById('installButton');
+  installButton.style.display = 'block'; // Make the install button visible
+
+  // Install button click event
+  installButton.addEventListener('click', () => {
+    // Show the prompt
+    deferredPrompt.prompt();
+    // Wait for the user to respond to the prompt
+    deferredPrompt.userChoice.then((choiceResult) => {
+      if (choiceResult.outcome === 'accepted') {
+        console.log('User accepted the installation');
+      } else {
+        console.log('User dismissed the installation');
+      }
+      deferredPrompt = null; // Reset the prompt
+    });
+  });
+});
