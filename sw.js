@@ -6,7 +6,9 @@ self.addEventListener('install', (event) => {
           '/index.html',
           '/styles.css',
           '/script.js'
-        ]);
+        ]).catch((error) => {
+          console.error('Cache error:', error);
+        });
       })
     );
   });
@@ -14,7 +16,13 @@ self.addEventListener('install', (event) => {
   self.addEventListener('fetch', (event) => {
     event.respondWith(
       caches.match(event.request).then((response) => {
-        return response || fetch(event.request);
+        if (response) {
+          return response;  // Return cached response if available
+        } else {
+          return fetch(event.request).catch((error) => {
+            console.error('Fetch error:', error);
+          });
+        }
       })
     );
   });
