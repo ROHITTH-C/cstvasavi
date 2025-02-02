@@ -1,17 +1,17 @@
 self.addEventListener('install', (event) => {
-    event.waitUntil(
-      caches.open('my-cache').then((cache) => {
-        return cache.addAll([
-          '/',
-          '/index.html',
-          '/styles.css',
-          '/script.js'
-        ]).catch((error) => {
-          console.error('Cache error:', error);
-        });
-      })
-    );
-  });
+  event.waitUntil(
+    caches.open('my-cache').then((cache) => {
+      return cache.addAll([
+        '/',
+        '/index.html',
+        '/styles.css',
+        '/script.js',
+        '/image.png?v=2',  // Added versioning to the image URL
+        '/manifest.json'
+      ]);
+    })
+  );
+});
   
   self.addEventListener('fetch', (event) => {
     event.respondWith(
