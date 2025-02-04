@@ -18,19 +18,40 @@
     <link rel="icon" type="image/png" href="ICON.ico">
     <link rel="manifest" href="https://cstvasavi.vercel.app/manifest.json" />
     <script src="script.js" defer></script>
+    <style>
+        .timetable-wrapper {
+            display: none; /* All tables hidden by default */
+        }
+        #CST {
+            display: block; /* CST is always shown on load */
+        }
+    </style>
 </head>
 
 <body>
     <header>
-        <h1>Department of CST</h1>
+        <h1>Department of CSE & CST</h1>
     </header>
 
     <main>
         <!-- Timetable Section -->
         <section id="timetable">
-            <h2>Time Table</h2>
-            <div class="timetable-wrapper">
+            <h2>Timetable</h2>
+    
+            <label for="section">Select Section:</label>
+            <select id="section" onchange="changeTimetable()">
+                <option value="CST" selected>CST</option>
+                <option value="CSE-A">CSE-A</option>
+                <option value="CSE-B">CSE-B</option>
+                <option value="CSE-C">CSE-C</option>
+                <option value="CSE-D">CSE-D</option>
+            </select>
+            
+        
+            <!-- Timetable for CST (Default) -->
+            <div class="timetable-wrapper" id="CST" style="display: block;">
                 <table>
+                    <h3>CST TIME TABLE</h3>
                     <thead>
                         <tr>
                             <th>Day</th>
@@ -101,6 +122,299 @@
                     </tbody>
                 </table>
             </div>
+        
+            <!-- Placeholder for Other Sections (Duplicate CST Timetable) -->
+            <div class="timetable-wrapper" id="CSE-A">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Day</th>
+                            <th>09:30 AM - 10:30 AM</th>
+                            <th>10:30 AM - 11:20 AM</th>
+                            <th>11:20 AM - 12:10 PM</th>
+                            <th>12:10 PM - 01:00 PM</th>
+                            <th>01:00 PM - 02:00 PM</th>
+                            <th>02:00 PM - 02:50 PM</th>
+                            <th>02:50 PM - 03:40 PM</th>
+                            <th>03:40 PM - 04:30 PM</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Monday</td>
+                            <td>DBMS</td>
+                            <td>P&S</td>
+                            <td colspan="2">PCS-II (Aptitude)</td>
+                            <td rowspan="6">Lunch Break</td>
+                            <td>SE</td>
+                            <td>OS</td>
+                            <td>UHV</td>
+                        </tr>
+                        <tr>
+                            <td>Tuesday</td>
+                            <td>ES</td>
+                            <td>P&S</td>
+                            <td>OS</td>
+                            <td>SE</td>
+                            <td>UHV</td>
+                            <td>P&S</td>
+                            <td>DBMS</td>
+                        </tr>
+                        <tr>
+                            <td>Wednesday</td>
+                            <td>P&S</td>
+                            <td>DBMS</td>
+                            <td>UHV</td>
+                            <td>OS</td>
+                            <td colspan="3">OS Lab</td>
+                        </tr>
+                        <tr>
+                            <td>Thursday</td>
+                            <td>FSD-I</td>
+                            <td colspan="3">FSD-I Lab</td>
+                            <td>SE</td>
+                            <td>DBMS</td>
+                            <td>UHV</td>
+                        </tr>
+                        <tr>
+                            <td>Friday</td>
+                            <td>SE</td>
+                            <td colspan="3">DBMS Lab</td>
+                            <td>ES</td>
+                            <td>OS</td>
+                            <td>Library</td>
+                        </tr>
+                        <tr>
+                            <td>Saturday</td>
+                            <td>P&S</td>
+                            <td>OS</td>
+                            <td>SE</td>
+                            <td>DBMS</td>
+                            <td colspan="2">PCS-II (English)</td>
+                            <td>Sports</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        
+            <div class="timetable-wrapper" id="CSE-B">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Day</th>
+                            <th>09:30 AM - 10:30 AM</th>
+                            <th>10:30 AM - 11:20 AM</th>
+                            <th>11:20 AM - 12:10 PM</th>
+                            <th>12:10 PM - 01:00 PM</th>
+                            <th>01:00 PM - 02:00 PM</th>
+                            <th>02:00 PM - 02:50 PM</th>
+                            <th>02:50 PM - 03:40 PM</th>
+                            <th>03:40 PM - 04:30 PM</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Monday</td>
+                            <td>OS</td>
+                            <td colspan="3">OS Lab</td>
+                            <td rowspan="6">Lunch Break</td>
+                            <td>DBMS</td>
+                            <td colspan="2">PCS-II (Aptitude)</td>
+                        </tr>
+                        <tr>
+                            <td>Tuesday</td>
+                            <td>DBMS</td>
+                            <td colspan="3">DBMS Lab</td>
+                            <td>OS</td>
+                            <td>P&S</td>
+                            <td>SE</td>
+                        </tr>
+                        <tr>
+                            <td>Wednesday</td>
+                            <td>SE</td>
+                            <td>OS</td>
+                            <td>P&S</td>
+                            <td>DBMS</td>
+                            <td colspan="3">FSD-I Lab</td>
+                        </tr>
+                        <tr>
+                            <td>Thursday</td>
+                            <td>DBMS</td>
+                            <td>SE</td>
+                            <td colspan="2">PCS-II (English)</td>
+                            <td>UHV</td>
+                            <td>OS</td>
+                            <td>Library</td>
+                        </tr>
+                        <tr>
+                            <td>Friday</td>
+                            <td>FSD-I</td>
+                            <td>P&S</td>
+                            <td>UHV</td>
+                            <td>SE</td>
+                            <td>UHV</td>
+                            <td>DBMS</td>
+                            <td>ES</td>
+                        </tr>
+                        <tr>
+                            <td>Saturday</td>
+                            <td>P&S</td>
+                            <td>ES</td>
+                            <td>UHV</td>
+                            <td>OS</td>
+                            <td>SE</td>
+                            <td>P&S</td>
+                            <td>Sports</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        
+            <div class="timetable-wrapper" id="CSE-C">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Day</th>
+                            <th>09:30 AM - 10:30 AM</th>
+                            <th>10:30 AM - 11:20 AM</th>
+                            <th>11:20 AM - 12:10 PM</th>
+                            <th>12:10 PM - 01:00 PM</th>
+                            <th>01:00 PM - 02:00 PM</th>
+                            <th>02:00 PM - 02:50 PM</th>
+                            <th>02:50 PM - 03:40 PM</th>
+                            <th>03:40 PM - 04:30 PM</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Monday</td>
+                            <td>DBMS</td>
+                            <td colspan="2">PCS-II (English)</td>
+                            <td>SE</td>
+                            <td rowspan="6">Lunch Break</td>
+                            <td>P&S</td>
+                            <td>OS</td>
+                            <td>UHV</td>
+                        </tr>
+                        <tr>
+                            <td>Tuesday</td>
+                            <td>SE</td>
+                            <td>FSD-I</td>
+                            <td>OS</td>
+                            <td>P&S</td>
+                            <td>DBMS</td>
+                            <td colspan="2">PCS-II (Aptitude)</td>
+                        </tr>
+                        <tr>
+                            <td>Wednesday</td>
+                            <td>P&S</td>
+                            <td colspan="3">DBMS Lab</td>
+                            <td>OS</td>
+                            <td>ES</td>
+                            <td>SE</td>
+                        </tr>
+                        <tr>
+                            <td>Thursday</td>
+                            <td>OS</td>
+                            <td>DBMS</td>
+                            <td>P&S</td>
+                            <td>UHV</td>
+                            <td colspan="3">FSD-I Lab</td>
+                        </tr>
+                        <tr>
+                            <td>Friday</td>
+                            <td>SE</td>
+                            <td colspan="3">OS Lab</td>
+                            <td>DBMS</td>
+                            <td>UHV</td>
+                            <td>Library</td>
+                        </tr>
+                        <tr>
+                            <td>Saturday</td>
+                            <td>OS</td>
+                            <td>SE</td>
+                            <td>DBMS</td>
+                            <td>P&S</td>
+                            <td>UHV</td>
+                            <td>ES</td>
+                            <td>Sports</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        
+            <div class="timetable-wrapper" id="CSE-D">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Day</th>
+                            <th>09:30 AM - 10:30 AM</th>
+                            <th>10:30 AM - 11:20 AM</th>
+                            <th>11:20 AM - 12:10 PM</th>
+                            <th>12:10 PM - 01:00 PM</th>
+                            <th>01:00 PM - 02:00 PM</th>
+                            <th>02:00 PM - 02:50 PM</th>
+                            <th>02:50 PM - 03:40 PM</th>
+                            <th>03:40 PM - 04:30 PM</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Monday</td>
+                            <td>OS</td>
+                            <td>SE</td>
+                            <td>DBMS</td>
+                            <td>OS</td>
+                            <td rowspan="6">Lunch Break</td>
+                            <td colspan="3">DBMS Lab</td>
+                        </tr>
+                        <tr>
+                            <td>Tuesday</td>
+                            <td>P&S</td>
+                            <td>DBMS</td>
+                            <td colspan="2">PCS-II (Aptitude)</td>
+                            <td colspan="3">OS Lab</td>
+                        </tr>
+                        <tr>
+                            <td>Wednesday</td>
+                            <td>OS</td>
+                            <td>FSD-I</td>
+                            <td>P&S</td>
+                            <td>OS</td>
+                            <td>UHV</td>
+                            <td>SE</td>
+                            <td>Library</td>
+                        </tr>
+                        <tr>
+                            <td>Thursday</td>
+                            <td>SE</td>
+                            <td>UHV</td>
+                            <td>OS</td>
+                            <td>DBMS</td>
+                            <td>P&S</td>
+                            <td colspan="2">PCS-II (English)</td>
+                        </tr>
+                        <tr>
+                            <td>Friday</td>
+                            <td>ES</td>
+                            <td>P&S</td>
+                            <td>SE</td>
+                            <td>UHV</td>
+                            <td colspan="3">FSD-I Lab</td>
+                        </tr>
+                        <tr>
+                            <td>Saturday</td>
+                            <td>DBMS</td>
+                            <td>P&S</td>
+                            <td>UHV</td>
+                            <td>SE</td>
+                            <td>DBMS</td>
+                            <td>ES</td>
+                            <td>Sports</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </section>
 
         <!-- Subject Cards Section -->
@@ -155,5 +469,17 @@
            cursor: pointer; transition: 0.3s; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);">
     Install App
 </button>
+<script>
+    function changeTimetable() {
+    var selectedSection = document.getElementById("section").value;
+
+    // Hide all timetables
+    document.querySelectorAll(".timetable-wrapper").forEach(el => el.style.display = "none");
+
+    // Show the selected timetable
+    document.getElementById(selectedSection).style.display = "block";
+    }
+
+</script>
 </body>
 </html>
