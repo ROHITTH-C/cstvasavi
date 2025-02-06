@@ -54,7 +54,7 @@ window.addEventListener('beforeinstallprompt', (e) => {
     //   } else {
     //     console.log('User dismissed the installation');
     //   }
-     // deferredPrompt = null; // Reset the prompt
+      deferredPrompt = null; // Reset the prompt
     });
   });
 });
