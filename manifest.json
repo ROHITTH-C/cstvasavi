@@ -4,7 +4,7 @@
   "description": "website as a PWA",
   "start_url": "/",
   "id": "/",
-  "display": "standalone",
+  "display": "browser",
   "background_color": "#ffffff",
   "theme_color": "#000000",
   "icons": [
