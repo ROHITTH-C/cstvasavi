@@ -27,11 +27,7 @@ function redirect(resource) {
         alert("Resource not found!");
     }
 }
-if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/sw.js').then((registration) => {
-        console.log('Service Worker Registered:', registration);
-    });
-}
+
   let deferredPrompt;
 
 window.addEventListener('beforeinstallprompt', (e) => {
