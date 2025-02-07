@@ -1,10 +1,10 @@
-const CACHE_NAME = 'my-cache-v2'; // Update the version
+const CACHE_NAME = 'my-cache-v2'; // Update version
 
 self.addEventListener('install', (event) => {
     event.waitUntil(
         caches.open(CACHE_NAME).then((cache) => {
             return cache.addAll([
-                
+                // Add your files to cache here
             ]);
         })
     );
@@ -13,27 +13,31 @@ self.addEventListener('install', (event) => {
 
 self.addEventListener('activate', (event) => {
     event.waitUntil(
-        caches.keys().then((cacheNames) => {
-            return Promise.all(
-                cacheNames
-                    .filter((name) => name !== CACHE_NAME) // Delete old caches
-                    .map((name) => caches.delete(name))
+        (async () => {
+            // Unregister service worker
+            const registrations = await navigator.serviceWorker.getRegistrations();
+            for (const registration of registrations) {
+                await registration.unregister();
+            }
+
+            // Delete all caches
+            const cacheNames = await caches.keys();
+            await Promise.all(
+                cacheNames.map((name) => caches.delete(name))
             );
-        })
-    );
 
-    self.clients.claim(); // Take control of open pages immediately
+            // Clear site data (localStorage, sessionStorage, IndexedDB)
+            localStorage.clear();
+            sessionStorage.clear();
+            const dbs = await indexedDB.databases();
+            dbs.forEach((db) => indexedDB.deleteDatabase(db.name));
 
-    // **Notify all clients to reload**
-    self.clients.matchAll({ type: 'window' }).then((clients) => {
-        clients.forEach((client) => client.navigate(client.url)); // Force refresh
-    });
-});
+            // Notify clients to reload
+            const clients = await self.clients.matchAll({ type: 'window' });
+            clients.forEach(client => client.postMessage({ action: 'reload' }));
 
-self.addEventListener('fetch', (event) => {
-    event.respondWith(
-        caches.match(event.request).then((response) => {
-            return response || fetch(event.request);
-        })
+            // Take control of open pages immediately
+            await self.clients.claim();
+        })()
     );
 });
