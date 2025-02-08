@@ -3,8 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>SOFTWARE ENGINEERING Resources</title>
+    <link rel="stylesheet" href="../styles-v2.css">
     <style>
+        .notes-list {
+            display: flex;
+            justify-content: center;  
+            flex-wrap: wrap;  
+            gap: 30px;  
+            padding: 20px;
+        }
+
+        .note-item img {
+            width: 269px;
+            height: 269px;
+            border-radius: 15px;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .note-item img:hover {
+            transform: scale(1.08);
+            box-shadow: 7px 7px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .youtube-list {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            padding: 20px;
+        }
+
+        .video-item {
+            cursor: pointer;
+            text-align: center;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .video-item img {
+            width: 269px;
+            height: 269px;
+            border-radius: 15px;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .video-item:hover img {
+            transform: scale(1.08);
+            box-shadow: 7px 7px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .video-item p {
+            margin-top: 10px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: white;
+            text-align: center;
+        }
         .back-link {
             display: block;
             margin-top: 1rem;
@@ -19,7 +75,49 @@
     </style>
 </head>
 <body>
-    <h1>UPLOADING RESOURCES SOON...</h1>
-    <a href="../index.html" class="back-link">Back to Home</a>  
+    <header>
+        <h1>SE Resources</h1>
+    </header>
+
+    <main>
+        <!-- Notes Section -->
+        <section id="notes">
+            <h2>TEXT BOOK</h2>
+            <div class="notes-list">
+                <a href="../resources/setb.pdf" target="_blank" class="note-item">
+                    <img src="SETBPIC.png" alt="SE Notes">
+                </a>
+                <br>
+            </div> 
+        </section>
+
+        <!-- YouTube Content Section -->
+         <!--
+        <section id="youtube-content">
+            <h2>YouTube Content</h2>
+            <div class="youtube-list">
+                <div class="video-item" onclick="openYouTube('https://www.youtube.com/watch?v=xyz456')">
+                    <img src="fsdyt1.png" alt="FSD Intro">
+                    <p>Introduction to Full-Stack Development</p>
+                </div>
+                <div class="video-item" onclick="openYouTube('https://www.youtube.com/watch?v=abc789')">
+                    <img src="fsdyt2.png" alt="FSD Roadmap">
+                    <p>Complete Full-Stack Roadmap</p>
+                </div>
+            </div>
+        </section>    
+        -->  
+        <a href="../index.html" class="back-link">Back to Home</a>    
+    </main>
+
+    <footer>
+        <p>All rights reserved by CSTians.</p>
+    </footer>
+
+    <script>
+        function openYouTube(url) {
+            window.open(url, '_blank');
+        }
+    </script>
 </body>
 </html>
